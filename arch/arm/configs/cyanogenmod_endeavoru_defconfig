@@ -3050,6 +3050,7 @@ CONFIG_SENSORS_LTR558=y
 #
 # Triggers - standalone
 #
+<<<<<<< HEAD
 CONFIG_XVMALLOC=y
 CONFIG_ZRAM=y
 # CONFIG_ZRAM_DEBUG is not set
@@ -3479,8 +3480,8 @@ CONFIG_CRYPTO_TWOFISH_COMMON=y
 # Compression
 #
 CONFIG_CRYPTO_DEFLATE=y
-# CONFIG_CRYPTO_ZLIB is not set
-# CONFIG_CRYPTO_LZO is not set
+CONFIG_CRYPTO_ZLIB=y
+CONFIG_CRYPTO_LZO=y
 
 #
 # Random Number Generation
