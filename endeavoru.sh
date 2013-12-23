@@ -9,10 +9,10 @@ wait
 startBuildTimeM=$(date +%r)
 export ARCH=arm 
 export SUBARCH=arm
-export CROSS_COMPILE=~/Temasek/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi- 
+export CROSS_COMPILE=~/toolchain/arm-eabi-4.7/bin/arm-eabi- 
 wait
 make cyanogenmod_endeavoru_defconfig
-make -j16
+make -j7
 wait
 make modules
 make -C drivers/net/wireless/compat-wireless_R5.SP2.03 KLIB=`pwd` KLIB_BUILD=`pwd` clean -j20
