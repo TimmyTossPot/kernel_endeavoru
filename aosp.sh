@@ -21,8 +21,6 @@ wait
 cp arch/arm/boot/zImage ../next_aosp/zImage
 wait
 find . -name "*.ko" -exec cp {} ../next_aosp \;
-wait
-cp -f drivers/net/wireless/compat-wireless_R5.SP2.03/net/wireless/cfg80211.ko ../next_sense
 endBuildTimeM=$(date +%r)
 
 echo " "

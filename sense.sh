@@ -23,6 +23,7 @@ wait
 find . -name "*.ko" -exec cp {} ../next_sense/modules \;
 wait
 cp -f drivers/net/wireless/compat-wireless_R5.SP2.03/net/wireless/cfg80211.ko ../next_sense/modules
+
 endBuildTimeM=$(date +%r)
 
 echo " "
