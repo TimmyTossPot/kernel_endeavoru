@@ -20,7 +20,9 @@ make -C drivers/net/wireless/compat-wireless_R5.SP2.03 KLIB=`pwd` KLIB_BUILD=`pw
 wait
 cp arch/arm/boot/zImage ../next_aosp/zImage
 wait
-find . -name "*.ko" -exec cp {} ../next_aosp \;
+find . -name "*.ko" -exec cp {} ../next_aosp/modules \;
+wait
+cp -f drivers/net/wireless/compat-wireless_R5.SP2.03/net/wireless/cfg80211.ko ../next_aosp/modules
 endBuildTimeM=$(date +%r)
 
 echo " "
