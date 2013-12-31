@@ -10,6 +10,7 @@ startBuildTimeM=$(date +%r)
 export ARCH=arm 
 export SUBARCH=arm
 export CROSS_COMPILE=~/toolchain/arm-eabi-4.7/bin/arm-eabi- 
+echo \#define LINUX_COMPILE_BY \"`echo audahadi`\"
 wait
 make custom_sense_defconfig
 make -j7
