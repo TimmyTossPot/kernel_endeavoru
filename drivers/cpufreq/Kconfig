@@ -119,7 +119,16 @@ config CPU_FREQ_DEFAULT_GOV_SMARTMAX_EPS
   bool "smartmax EPS"
   select CPU_FREQ_GOV_SMARTMAX_EPS
   help
-    Use the CPUFreq governor 'smartmax EPS' extreme power saving as default 
+    Use the CPUFreq governor 'smartmax EPS' extreme power saving as default
+
+config CPU_FREQ_DEFAULT_GOV_GAMING
+        bool "gaming"
+        select CPU_FREQ_GOV_GAMING
+        help
+          Use the CPUFreq governor 'gaming' as default. This allows
+          you to get a full dynamic cpu frequency capable system by simply
+          loading your cpufreq low-level hardware driver, using the
+          'gaming' governor for latency-sensitive workloads. 
 
 endchoice
 
@@ -212,6 +221,25 @@ config CPU_FREQ_GOV_SMARTMAX_EPS
   select CPU_FREQ_TABLE
   help
     'smartmax EPS' is the extreme powersaving version of smartmax 
+
+config CPU_FREQ_GOV_GAMING
+        tristate "'gaming' cpufreq policy governor"
+        help
+          'gaming' - This driver adds a dynamic cpufreq policy governor
+          designed for latency-sensitive workloads.
+
+          This governor attempts to reduce the latency of clock
+          increases so that the system is more responsive to
+          interactive workloads.
+
+          To compile this driver as a module, choose M here: the
+          module will be called cpufreq_interactive.
+
+          For details, take a look at linux/Documentation/cpu-freq.
+        
+          This driver is a modified interactive governor with disable sysfs interface.
+
+          If in doubt, say N.
 
 config CPU_FREQ_GOV_CONSERVATIVE
 	tristate "'conservative' cpufreq governor"
